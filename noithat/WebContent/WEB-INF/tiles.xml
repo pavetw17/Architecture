@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+	       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+	       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	<definition name="Page" template="/template/template.jsp">
+		<put-attribute name="header" value="/page/header.jsp" />
+		<put-attribute name="footer" value="/page/footer.jsp" />
+	</definition>
+	
+	<!-- trang chủ template -->
+	<definition name="TrangChu" extends="Page">
+		<put-attribute name="title" value="Trang Chủ" />
+		<put-attribute name="content" value="/module/trangchu.jsp" />
+	</definition>
+	
+	<!-- trang template noi dung -->
+	<definition name="Template_NoiDung" template="/template/template_noidung.jsp">
+		<put-attribute name="header" value="/page/header.jsp" />
+		<put-attribute name="left" value="/page/left_noidung.jsp" />
+		<put-attribute name="footer" value="/page/footer.jsp" />
+	</definition>
+	
+	<!-- Khong co Script phan cuoi -->
+	<definition name="DichVu" template="/template/templateDichVu.jsp">
+		<put-attribute name="header" value="/page/header.jsp" />
+		<put-attribute name="footer" value="/page/footer.jsp" />
+	</definition>
+	<definition name="TrangGioiThieu" extends="DichVu">
+		<put-attribute name="title" value="Giới Thiệu" />
+		<put-attribute name="content" value="/module/trangGioiThieu.jsp" />
+	</definition>
+	<definition name="TrangCongTrinh" extends="DichVu">
+		<put-attribute name="title" value="Công Trình" />
+		<put-attribute name="content" value="/module/trangCongTrinh.jsp" />
+	</definition>
+	<definition name="TrangDichVu" extends="DichVu">
+		<put-attribute name="title" value="Dịch Vụ" />
+		<put-attribute name="content" value="/module/trangSanPham.jsp" />
+	</definition>
+	<definition name="TrangTuVan" extends="DichVu">
+		<put-attribute name="title" value="Tu Vấn" />
+		<put-attribute name="content" value="/module/trangLienHe.jsp" />
+	</definition>
+	<definition name="TrangLienHe" extends="DichVu">
+		<put-attribute name="title" value="Liên hệ" />
+		<put-attribute name="content" value="/module/trangLienHe.jsp" />
+	</definition>
+	<definition name="TinTuc_TrangXemNoiDung" extends="Template_NoiDung">
+		<put-attribute name="content" value="/module/trangTinTuc_XemNoiDung.jsp" />
+	</definition>
+	
+	
+	<!-- trang admin dau tien -->
+	<definition name="MasterPageQuanLy" template="/admin/template/quanly_template.jsp">
+	    <put-attribute name="menu" value="/admin/template/menu_home.jsp"/>  
+	    <put-attribute name="content" value="/admin/quanly_Home.jsp"/>      
+    </definition>
+	<definition name="QuanLy_trangHome" extends="MasterPageQuanLy">
+		<put-attribute name="menu" value="/admin/template/menu_home.jsp"/> 
+		
+    </definition>
+	<definition name="QuanLy_trangContent" extends="MasterPageQuanLy">
+		<put-attribute name="menu" value="/admin/template/menu_content.jsp"/>
+    </definition>
+    
+   <!--  nhap san pham -->
+    <definition name="QuanLy_trangNhapSanPham" extends="QuanLy_trangHome">
+    	 <put-attribute name="content" value="/admin/quanly_Home_nhapsanpham.jsp"/>      
+    </definition>
+   <!--  quản ly san pham -->
+    <definition name="QuanLy_trangQuanLySanPham" extends="QuanLy_trangHome">
+    	 <put-attribute name="content" value="/admin/quanly_Home_quanlysanpham.jsp"/>      
+    </definition>
+</tiles-definitions>

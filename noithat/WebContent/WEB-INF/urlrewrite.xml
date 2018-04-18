@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 4.0//EN"
+        "http://www.tuckey.org/res/dtds/urlrewrite4.0.dtd">
+<!-- Configuration file for UrlRewriteFilter http://www.tuckey.org/urlrewrite/ -->
+
+<urlrewrite>
+	<!-- <rule> <from>/$</from> <to type="forward">index.jsp</to> </rule> -->
+ 	<!-- <rule>
+		<note>Redirect tat ca cac ki tu .html to index.jsp</note>
+		<from>/(.*).html</from>
+		<to type="forward">index.jsp</to>
+	</rule>  -->
+	<rule>
+		<note>Redirect cac trang gioi thieu, cong trinh,...</note>
+		<from>/muc/((.*)+)$</from>
+		<to>/RedirectPage?action=$1</to>
+	</rule>
+	<!-- <rule>
+		<note>Xem tin noi dung</note>
+		<from>/xem-noi-dung/san-pham-([^-]+?)$</from>
+		<to>/TinTuc_XemNoiDung?id_tintuc=$1</to>
+	</rule> -->
+	<rule>
+		<note>Xem tin noi dung</note>
+		<from>/kien-truc/(.*)/(.*)/([^-]+?)$</from>
+		<to>/TinTuc_XemNoiDung?seo_name_detail=$1&amp;seo_name_tintuc=$2&amp;id_tintuc=$3</to>
+	</rule> 
+	<rule>
+		<note>Xem tin noi dung</note>
+		<from>/noi-that/(.*)/(.*)/([^-]+?)$</from>
+		<to>/TinTuc_XemNoiDung?seo_name_detail=$1&amp;seo_name_tintuc=$2&amp;id_tintuc=$3</to>
+	</rule> 
+	<rule>
+		<note>Xem tin noi dung</note>
+		<from>/thi-cong/(.*)/(.*)/([^-]+?)$</from>
+		<to>/TinTuc_XemNoiDung?seo_name_detail=$1&amp;seo_name_tintuc=$2&amp;id_tintuc=$3</to>
+	</rule> 
+	
+</urlrewrite>
